@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Java核心技术--基础知识</title>
+      <link href="/2019/07/15/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(%E5%8D%B71-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)/"/>
+      <url>/2019/07/15/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0(%E5%8D%B71-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/07/15/5d2c1e461652172219.jpg" alt="Java核心技术卷一.jpg"></p><center><p>&lt;&lt;Java核心技术&gt;&gt;读书笔记</p></center><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 读书笔记 </tag>
+            
+            <tag> Java核心技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>EasyUI学习笔记</title>
       <link href="/2019/07/08/easyUI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2019/07/08/easyUI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
@@ -49,9 +78,9 @@
       
         <tags>
             
-            <tag> mysql </tag>
-            
             <tag> 读书笔记 </tag>
+            
+            <tag> mysql </tag>
             
             <tag> 深入浅出mysql </tag>
             
