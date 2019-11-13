@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>读书笔记_Java虚拟机_垃圾收集器</title>
+      <link href="/2019/11/13/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <url>/2019/11/13/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_java%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<center>读书总结<br>JVM的垃圾收集器好多,总结一下,以便记忆</center><a id="more"></a><h3 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h3><h4 id="按新老年代可以分为"><a href="#按新老年代可以分为" class="headerlink" title="按新老年代可以分为:"></a>按新老年代可以分为:</h4><table><thead><tr><th align="center">分类</th><th align="center">收集器</th></tr></thead><tbody><tr><td align="center">Young generation(新生代)</td><td align="center">Serial<br>ParNew<br>Parallel Scavenge</td></tr><tr><td align="center">横跨上下</td><td align="center">G1</td></tr><tr><td align="center">Tenured generation(老年代)</td><td align="center">CMS<br>Serial Old(MSC)<br>Parallel Old</td></tr></tbody></table><blockquote><p>注意:没有最好的收集器,只有最适合的收集器</p></blockquote><h4 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h4><p>最基本,发展历史最悠久的收集器,JDK1.3.1之前新生代唯一选择.</p><ul><li><p><strong>单线程收集器</strong></p><blockquote><p>在进行垃圾收集时,必须暂停其他所有的工作线程,知道它收集结束.(Stop The World)</p></blockquote></li><li><p>虚拟机运行在Client模式下的默认新生代收集器</p></li></ul><p><strong>优点:</strong>简单而高效(以其他收集器的单线程比)</p><p><strong>算法:</strong> 新生代使用复制算法</p><h4 id="ParNew收集器"><a href="#ParNew收集器" class="headerlink" title="ParNew收集器"></a>ParNew收集器</h4><p>Serial收集器的多线程版本</p><ul><li><p>采用多条线程进行垃圾收集</p></li><li><p>其余行为与Serial收集器完全一致</p></li><li><p>许多运行在Server模式下的虚拟机首选的新生代收集器</p><blockquote><ul><li><strong>原因:</strong>目前除了Serial收集器,目前只有它能与CMS配合工作</li></ul></blockquote></li></ul><p><strong>缺点:</strong></p><ul><li>在单CPU的环境下绝对不会有比Serial收集器更好的效果,甚至在双CPU情况下有时候也超不了</li></ul><p><strong>参数:</strong></p><p><code>-XX:ParallelGCThreads</code>:限制垃圾收集线程数</p><h4 id="Parallel-Scavenge-收集器"><a href="#Parallel-Scavenge-收集器" class="headerlink" title="Parallel Scavenge 收集器"></a>Parallel Scavenge 收集器</h4><ul><li><p>新生代收集器</p></li><li><p>并行,多线程</p></li><li><p><strong>目标:</strong>达到一个可以控制的吞吐量(Throughput)</p><blockquote><p><strong>吞吐量:</strong>CPU用于运行用户代码的时间与CPU运行总消耗的时间的比值</p><p>吞吐量=运行用户代码的时间/( 运行用户代码的时间 +垃圾回收时间)</p><p>高吞吐量 =&gt; 高效利用CPU时间 =&gt; 尽快完成程序运行任务 =&gt; 适合后台计算不需要太多交互的任务</p></blockquote></li></ul><p><strong>算法:</strong>复制算法</p><p><strong>参数:</strong></p><ul><li><p><code>-XX:MaxGCPauseMillis</code>:控制最大垃圾停顿时间</p><blockquote><p>数值为大于0的毫秒数</p><p>GC停顿时间的缩短是以牺牲吞吐量和新生代空间来换取的</p></blockquote></li><li><p><code>-XX:GCTimeRatio</code>:直接设置吞吐量大小</p><blockquote><p>数值为大于0且小于100的整数(垃圾收集时间占用总时间比)</p></blockquote></li><li><p><code>-XX:+UseAdaptiveSizePolicy</code>:开关参数:GC自适应调节策略</p><blockquote><p>动态调整相关参数以提供最合适的停顿时间或者最带的吞吐量</p><p>与ParNew的重要区别</p></blockquote></li></ul><h4 id="Serial-Old-收集器"><a href="#Serial-Old-收集器" class="headerlink" title="Serial Old 收集器"></a>Serial Old 收集器</h4><ul><li><p>Serial的老年代版本</p></li><li><p>单线程</p></li><li><p><strong>算法:</strong>标记-整理算法</p></li><li><p>主要意义在于给Client模式下的虚拟机使用</p><blockquote><p>在Server模式下的两大用途:</p><ol><li><p>在JDK1.5之前与Scavenge收集器搭配使用</p></li><li><p>CMS的后备预案,在并发收集发生Concurrent Mode Failure时使用</p></li></ol></blockquote></li></ul><h4 id="Parallel-Old-收集器"><a href="#Parallel-Old-收集器" class="headerlink" title="Parallel Old 收集器"></a>Parallel Old 收集器</h4><ul><li>Parallel Scavenge的老年代版本</li><li>多线程</li><li><strong>算法:</strong>标记-整理算法</li><li>JDK1.6中才开始提供</li><li>在注重吞吐量以及CUO资源敏感的场合,优先考虑Parallel Scavenge+Parallel Old的组合</li></ul><h4 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h4><ul><li><p>以获取最短回收停顿时间为目标的收集器</p></li><li><p>符合需要服务相应速度的收集器</p></li><li><p><strong>算法:</strong>标记-清除算法</p><blockquote><p>分为四个步骤:</p><ul><li>初始标记 (CMS initial mark)                        需要Stop The World(很短)</li><li>并发标记(CMS concurrent mark)</li><li>重新标记(CMS remark)                                需要Stop The World(很短)</li><li>并发标记(CMS concurrent sweep)</li></ul></blockquote></li><li><p><strong>优点:</strong>(Concurrent Mark Sweep)</p><ul><li>并发收集</li><li>低停顿</li></ul></li><li><p><strong>缺点:</strong></p><ul><li><p>CMS收集器对CPU资源非常敏感</p></li><li><p>无法出路浮动垃圾(Floating Garbage)</p><blockquote><p>浮动垃圾:</p><p>CMS并发清理阶段 用户线程产生的新垃圾,这些垃圾在本次收集过程中无法处理,称之为浮动垃圾.</p><ul><li><p>Concurrent Mode Failure</p><blockquote><p><strong>原因:</strong>CMS预留内存无法满足用户线程使用</p><p><strong>系统备案方法:</strong>临时启动Serial Old收集器重新进行老年代的垃圾收集</p><p><strong>根本解决方案:</strong>调整<code>-XX:CMSInitiatingOccupancyFraction</code>,这个参数太高容易导致大量Concurrent Mode Failure,太低性能降低</p></blockquote></li></ul></blockquote></li><li><p>收集结束时会有大量空间碎片产生(标记-清除算法导致的)</p><blockquote><p>解决方案:</p><p>​    <code>+UseCMSCompactAtFullCollection</code>开关参数(默认开启),用于在CMS收集器顶不住要进行FullGC时,开启内存碎片整理合并</p><p>​    <code>-XX:CMSFullGCsBeforeCompaction</code>用于设置执行多少次不压缩的Full GC跟一次带压缩的(默认为0)</p></blockquote></li></ul></li></ul><h4 id="G1收集器"><a href="#G1收集器" class="headerlink" title="G1收集器"></a>G1收集器</h4><p>未完待续……</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> JVM </tag>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java中的enum类</title>
       <link href="/2019/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_SpringBoot_%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE_1/"/>
       <url>/2019/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_SpringBoot_%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE_1/</url>
@@ -981,9 +1010,9 @@
       
         <tags>
             
-            <tag> mysql </tag>
-            
             <tag> 读书笔记 </tag>
+            
+            <tag> mysql </tag>
             
             <tag> 深入浅出mysql </tag>
             
@@ -1219,11 +1248,11 @@
             
             <tag> 教程 </tag>
             
-            <tag> markdown </tag>
-            
             <tag> hexo </tag>
             
             <tag> 博客 </tag>
+            
+            <tag> markdown </tag>
             
             <tag> 笔记 </tag>
             
