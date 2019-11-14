@@ -4,7 +4,34 @@
   
     
     <entry>
-      <title>读书笔记_Java虚拟机_垃圾收集器</title>
+      <title>ssh免密登录复制密钥时没反应</title>
+      <link href="/2019/11/14/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_linux_1/"/>
+      <url>/2019/11/14/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_linux_1/</url>
+      
+        <content type="html"><![CDATA[<center>ssh免密登录复制密钥时没反应</center><a id="more"></a><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>ssh免密登录复制密钥时没反应</p><h4 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息:"></a>错误信息:</h4><p>今天在配置免密登录时,执行<code>ssh-copy-id 主机地址</code>时没有反应,检查了半天,原因如下</p><h3 id="主要原因"><a href="#主要原因" class="headerlink" title="主要原因"></a>主要原因</h3><p>静态地址和默认网关不匹配</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在控制台(Xshell)中输入setup,打开工具选项=&gt;网路配置=&gt;设备配置,选择你使用的设备.</p><p>将默认网关IP的前三位置为和静态IP一样的数值.</p><p>最后一位置为2.</p><p>保存并退出.</p><p><strong>重启网络</strong><code>service network restart</code></p><blockquote><p><strong>注意:</strong>一定要重启!!!!!,否则还是连不上</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 异常处理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>读书笔记_数量繁多的JVM垃圾收集器</title>
       <link href="/2019/11/13/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
       <url>/2019/11/13/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0_java%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
       
@@ -92,8 +119,8 @@
     
     <entry>
       <title>mysql连接失败HikariPool错误</title>
-      <link href="/2019/10/21/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_mysql_1/"/>
-      <url>/2019/10/21/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_mysql_1/</url>
+      <link href="/2019/10/13/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_mysql_1/"/>
+      <url>/2019/10/13/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_mysql_1/</url>
       
         <content type="html"><![CDATA[<center>mysql连接失败HikariPool错误</center><a id="more"></a><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>连接mysql时HikariPool初始化失败.</p><h4 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息:"></a>错误信息:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLException: The server time zone value &apos;ÖÐ¹ú±ê×¼Ê±¼ä&apos; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.</span><br></pre></td></tr></table></figure><h3 id="主要原因"><a href="#主要原因" class="headerlink" title="主要原因"></a>主要原因</h3><p> 时区配置的有歧义 </p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p> 在 jdbc url 后加上 &amp;serverTimezone=Asia/Shanghai 这样无歧义的值。 </p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="attr">jdbc:MySQL://localhost:3306/testdata?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span></span><br></pre></td></tr></table></figure>]]></content>
       
@@ -1248,11 +1275,11 @@
             
             <tag> 教程 </tag>
             
+            <tag> markdown </tag>
+            
             <tag> hexo </tag>
             
             <tag> 博客 </tag>
-            
-            <tag> markdown </tag>
             
             <tag> 笔记 </tag>
             
