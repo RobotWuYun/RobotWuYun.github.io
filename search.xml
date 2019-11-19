@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>hexo上传后点击标签报错</title>
-      <link href="/2019/11/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/"/>
-      <url>/2019/11/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/</url>
-      
-        <content type="html"><![CDATA[<center>错误信息：SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</center><a id="more"></a><h3 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息:"></a>错误信息:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</span><br></pre></td></tr></table></figure><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><ol><li>右键工程,打开工程属性对话框,到<strong>Deloyment Assembly</strong>页面,点击Add:</li></ol><p><img src="https://i.loli.net/2019/08/19/t6xosw3CuTrymVZ.png" alt="20131224084203859.png"></p><ol start="2"><li><p>选择<strong>java Build Path Entries</strong><br><img src="https://i.loli.net/2019/08/19/dtJMGwgiFCIae1y.png" alt="20131224084158734.png"></p></li><li><p>把成序用的Library加入进来<br><img src="https://i.loli.net/2019/08/19/zsEkR6JIC7oBZeL.png" alt="20131224084217687.png"></p></li></ol><p>4.重新运行Server</p><p><strong>鸣谢:</strong>CSDN_hunhun1122</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 异常处理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-            <tag> 笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Linux学习笔记_命令</title>
       <link href="/2019/11/14/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Linux_%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/11/14/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Linux_%E5%91%BD%E4%BB%A4/</url>
@@ -132,7 +105,7 @@
             
             <tag> 学习笔记 </tag>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
             <tag> SpringBoot </tag>
             
@@ -273,9 +246,9 @@
             
             <tag> 学习笔记 </tag>
             
-            <tag> SpringBoot </tag>
-            
             <tag> java </tag>
+            
+            <tag> SpringBoot </tag>
             
         </tags>
       
@@ -460,6 +433,33 @@
     
     
     <entry>
+      <title>eclipse报错Error configuring application listener....</title>
+      <link href="/2019/09/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/"/>
+      <url>/2019/09/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/</url>
+      
+        <content type="html"><![CDATA[<center>错误信息：SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</center><a id="more"></a><h3 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息:"></a>错误信息:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</span><br></pre></td></tr></table></figure><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><ol><li>右键工程,打开工程属性对话框,到<strong>Deloyment Assembly</strong>页面,点击Add:</li></ol><p><img src="https://i.loli.net/2019/08/19/t6xosw3CuTrymVZ.png" alt="20131224084203859.png"></p><ol start="2"><li><p>选择<strong>java Build Path Entries</strong><br><img src="https://i.loli.net/2019/08/19/dtJMGwgiFCIae1y.png" alt="20131224084158734.png"></p></li><li><p>把成序用的Library加入进来<br><img src="https://i.loli.net/2019/08/19/zsEkR6JIC7oBZeL.png" alt="20131224084217687.png"></p></li></ol><p>4.重新运行Server</p><p><strong>鸣谢:</strong>CSDN_hunhun1122</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 异常处理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> JDK </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDEA新建没有class选项</title>
       <link href="/2019/08/26/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_IDEA_2/"/>
       <url>/2019/08/26/%E9%87%87%E5%9D%91%E6%8C%87%E5%8D%97_IDEA_2/</url>
@@ -536,9 +536,9 @@
             
             <tag> 笔记 </tag>
             
-            <tag> IDEA </tag>
-            
             <tag> Tomcat </tag>
+            
+            <tag> IDEA </tag>
             
         </tags>
       
@@ -634,7 +634,7 @@
     
     
     <entry>
-      <title>Maven+spring 报错：Error configuring application listener of class org.springframework.web.cont</title>
+      <title>hexo点击标签,分类显示不全或报错</title>
       <link href="/2019/08/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_Hexo_1/"/>
       <url>/2019/08/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_Hexo_1/</url>
       
@@ -1319,11 +1319,11 @@
             
             <tag> 教程 </tag>
             
-            <tag> markdown </tag>
-            
             <tag> hexo </tag>
             
             <tag> 博客 </tag>
+            
+            <tag> markdown </tag>
             
             <tag> 笔记 </tag>
             
