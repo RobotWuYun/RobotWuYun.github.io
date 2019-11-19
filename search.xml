@@ -76,9 +76,38 @@
             
             <tag> Java </tag>
             
+            <tag> JVM </tag>
+            
             <tag> 读书笔记 </tag>
             
-            <tag> JVM </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中的enum类</title>
+      <link href="/2019/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_SpringBoot_%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE_1/"/>
+      <url>/2019/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_SpringBoot_%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE_1/</url>
+      
+        <content type="html"><![CDATA[<center>    SpringBootの实战笔记<br>所谓实践出真知<br>学习学习<br></center><a id="more"></a><p>​        今天在做实战项目时,发现了一个以前没见过的点,视频作者将向前端传递错误信息封装成了<code>enum</code>类型,这是我之前没用过的(之前就直接返回了) .</p><p>​        于是就百度了一下:</p><p>​        这种方法是在前后端分离的项目中使用的,用于向前端传递错误信息的设置,将常量封装到一个类中，并且要提供相应的构造器，还可以提供更多的方法，这是常量所没有的性质。 </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> CommentTypeEnum &#123;</span><br><span class="line">    QUESTION(<span class="number">1</span>),</span><br><span class="line">    COMMENT(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">private</span> Integer type;</span><br><span class="line"></span><br><span class="line">    CommentTypeEnum(Integer type) &#123;<span class="comment">//构造方法</span></span><br><span class="line">        <span class="keyword">this</span>.type = type;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//其他方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> type;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isExist</span><span class="params">(Integer type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (CommentTypeEnum commentTypeEnum : CommentTypeEnum.values()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (commentTypeEnum.getType() == type) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>使用场景:<ol><li>在web 开发项目中实体类型使用枚举类型</li></ol></li></ul><blockquote><p>在项目中使用枚举 的地方不是很多，将常量封装成类，其实还可以封装成静态的 <code>public static final</code></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringBoot学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> SpringBoot </tag>
             
         </tags>
       
@@ -103,9 +132,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> Linux </tag>
             
         </tags>
       
@@ -162,6 +191,97 @@
             <tag> IDEA </tag>
             
             <tag> lombok </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>学习笔记_Java_线程相关</title>
+      <link href="/2019/10/09/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Java_%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3/"/>
+      <url>/2019/10/09/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Java_%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3/</url>
+      
+        <content type="html"><![CDATA[<center>一些常见的关于线程的笔记</center><a id="more"></a><h1 id="关于线程"><a href="#关于线程" class="headerlink" title="关于线程"></a>关于线程</h1><h4 id="简述线程、程序、进程的基本概念。以及他们之间关系是什么"><a href="#简述线程、程序、进程的基本概念。以及他们之间关系是什么" class="headerlink" title="简述线程、程序、进程的基本概念。以及他们之间关系是什么?"></a>简述线程、程序、进程的基本概念。以及他们之间关系是什么?</h4><p><strong>线程</strong>与进程相似，但线程是一个比进程更小的执行单位。一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享同一块内存空间和一组系统资源，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p><p><strong>程序</strong>是含有指令和数据的文件，被存储在磁盘或其他的数据存储设备中，也就是说程序是静态的代码。</p><p><strong>进程</strong>是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。简单来说，一个进程就是一个执行中的程序，它在计算机中一个指令接着一个指令地执行着，同时，每个进程还占有某些系统资源如CPU时间，内存空间，文件，输入输出设备的使用权等等。换句话说，当程序在执行时，将会被操作系统载入内存中。 线程是进程划分成的更小的运行单位。线程和进程最大的不同在于基本上各进程是独立的，而各线程则不一定，因为同一进程中的线程极有可能会相互影响。从另一角度来说，进程属于操作系统的范畴，主要是同一段时间内，可以同时执行一个以上的程序，而线程则是在同一程序内几乎同时执行一个以上的程序段。</p><h4 id="线程有哪些基本状态"><a href="#线程有哪些基本状态" class="headerlink" title="线程有哪些基本状态?"></a>线程有哪些基本状态?</h4><p>Java 线程在运行的生命周期中的指定时刻只可能处于下面6种不同状态的其中一个状态</p><table><thead><tr><th align="center">状态名称</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">NEW</td><td align="center">初始状态,线程被构建,但还没有调用start(0方法</td></tr><tr><td align="center">RUNNABLE</td><td align="center">运行状态,Java线程将操作系统中就绪和运行两种状态笼统恶的称作”运行中”</td></tr><tr><td align="center">BLOCKED</td><td align="center">阻塞状态,表示线程阻塞于锁</td></tr><tr><td align="center">WAITING</td><td align="center">等待状态,表示线程进入等待状态,进入该状态比那是当前线程需要等待其他线程做出一些特定动作(通知或中断)</td></tr><tr><td align="center">TIME_WAITING</td><td align="center">超时等待状态,该状态不同于WAITING,它是可以在指定的时间自行返回的</td></tr><tr><td align="center">TERMINATED</td><td align="center">终止状态,表示当前线程已经执行完毕</td></tr></tbody></table><p>线程创建之后它将处于 <strong>NEW（新建）</strong> 状态，调用 <code>start()</code> 方法后开始运行，线程这时候处于 <strong>READY（可运行）</strong> 状态。可运行状态的线程获得了 cpu 时间片（timeslice）后就处于 <strong>RUNNING（运行）</strong> 状态。</p><blockquote><p>操作系统隐藏 Java虚拟机（JVM）中的 RUNNABLE 和 RUNNING 状态，它只能看到 RUNNABLE 状态,所以 Java 系统一般将这两个状态统称为 <strong>RUNNABLE（运行中）</strong> 状态 。</p></blockquote><p>当线程执行 <code>wait()</code>方法之后，线程进入 <strong>WAITING（等待）</strong>状态。进入等待状态的线程需要依靠其他线程的通知才能够返回到运行状态，而 <strong>TIME_WAITING(超时等待)</strong> 状态相当于在等待状态的基础上增加了超时限制，比如通过 <code>sleep（long millis）</code>方法或 <code>wait（long millis）</code>方法可以将 Java 线程置于 TIMED WAITING 状态。当超时时间到达后 Java 线程将会返回到 RUNNABLE 状态。当线程调用同步方法时，在没有获取到锁的情况下，线程将会进入到 <strong>BLOCKED（阻塞）</strong> 状态。线程在执行 Runnable 的<code>run()</code>方法之后将会进入到 <strong>TERMINATED（终止）</strong> 状态。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> 线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>学习笔记_Java_关于JVM JDK和JRE</title>
+      <link href="/2019/09/26/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Java_JVMJDK%E5%92%8CJRE/"/>
+      <url>/2019/09/26/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Java_JVMJDK%E5%92%8CJRE/</url>
+      
+        <content type="html"><![CDATA[<center>Javaの笔记<br></center><a id="more"></a><h2 id="关于JVM-JDK-和-JRE的通俗解答"><a href="#关于JVM-JDK-和-JRE的通俗解答" class="headerlink" title="关于JVM JDK 和 JRE的通俗解答"></a>关于JVM JDK 和 JRE的通俗解答</h2><h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a><strong>JVM</strong></h3><p>Java虚拟机(JVM)是运行Java字节码的虚拟机.JVM有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。</p><p><strong>什么是字节码?采用字节码的好处是什么?</strong></p><blockquote><p>在 Java 中，JVM可以理解的代码就叫做<code>字节码</code>（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以 Java 程序运行时比较高效，而且，由于字节码并不针对一种特定的机器，因此，Java程序无须重新编译便可在多种不同操作系统的计算机上运行。</p></blockquote><blockquote><p>我们需要格外注意的是 .class-&gt;机器码 这一步。在这一步 JVM 类加载器首先加载字节码文件，然后通过解释器逐行解释执行，这种方式的执行速度会相对比较慢。而且，有些方法和代码块是经常需要被调用的(也就是所谓的热点代码)，所以后面引进了 JIT 编译器，而JIT 属于运行时编译。当 JIT 编译器完成第一次编译后，其会将字节码对应的机器码保存下来，下次可以直接使用。而我们知道，机器码的运行效率肯定是高于 Java 解释器的。这也解释了我们为什么经常会说 Java 是编译与解释共存的语言。</p></blockquote><blockquote><p><strong>HotSpot采用了惰性评估(Lazy Evaluation)的做法，根据二八定律，消耗大部分系统资源的只有那一小部分的代码（热点代码），而这也就是JIT所需要编译的部分。JVM会根据代码每次被执行的情况收集信息并相应地做出一些优化，因此执行的次数越多，它的速度就越快。JDK 9引入了一种新的编译模式AOT(Ahead of Time Compilation)，它是直接将字节码编译成机器码，这样就避免了JIT预热等各方面的开销。JDK支持分层编译和AOT协作使用。但是 ，AOT 编译器的编译质量是肯定比不上 JIT 编译器的。</strong></p></blockquote><p><strong>总结：</strong></p><p>Java虚拟机（JVM）是运行 Java 字节码的虚拟机。JVM有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</p><h3 id="JDK和JRE"><a href="#JDK和JRE" class="headerlink" title="JDK和JRE"></a><strong>JDK和JRE</strong></h3><p>JDK是Java Development Kit，它是功能齐全的Java SDK。它拥有JRE所拥有的一切，还有编译器（javac）和工具（如javadoc和jdb）。它能够创建和编译程序。</p><p>JRE 是 Java运行时环境。它是运行已编译 Java 程序所需的所有内容的集合，包括 Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。</p><p>如果你只是为了运行一下 Java 程序的话，那么你只需要安装 JRE 就可以了。如果你需要进行一些 Java 编程方面的工作，那么你就需要安装JDK了。但是，这不是绝对的。有时，即使您不打算在计算机上进行任何Java开发，仍然需要安装JDK。例如，如果要使用JSP部署Web应用程序，那么从技术上讲，您只是在应用程序服务器中运行Java程序。那你为什么需要JDK呢？因为应用程序服务器会将 JSP 转换为 Java servlet，并且需要使用 JDK 来编译 servlet。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> JVM </tag>
+            
+            <tag> JDK </tag>
+            
+            <tag> JRE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>那些年我被面试吊打的问题_servlet篇</title>
+      <link href="/2019/09/25/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93_%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%A2%AB%E9%9D%A2%E8%AF%95%E5%90%8A%E6%89%93%E7%9A%84%E9%97%AE%E9%A2%98_Servlet%E7%AF%87/"/>
+      <url>/2019/09/25/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93_%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E8%A2%AB%E9%9D%A2%E8%AF%95%E5%90%8A%E6%89%93%E7%9A%84%E9%97%AE%E9%A2%98_Servlet%E7%AF%87/</url>
+      
+        <content type="html"><![CDATA[<center>面试虐我千百遍<br>我待面试如初恋</center><a id="more"></a><h3 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h3><p><strong>开发一个servlet的步骤:</strong></p><ol><li>创建web应用项目</li><li>编写servlet代码</li><li>部署到tomcat中</li></ol><h4 id="Servlet总结"><a href="#Servlet总结" class="headerlink" title="Servlet总结"></a>Servlet总结</h4><p>在Java Web程序中,<strong>Servlet</strong>主要负责接收用户请求<code>HttpServletRequest</code>,在<code>doGet()</code>,<code>doPost()</code>中 做相应的处理，并将回应<code>HttpServletResponse</code>反馈给用户。<strong>Servlet</strong> 可以设置初始化参数，供Servlet内部使用。一个Servlet类只会有一个实例，在它初始化时调用<code>init()</code>方法，销毁时调用<code>destroy()</code>方法<strong>。</strong>Servlet需要在web.xml中配置（MyEclipse中创建Servlet会自动配置），<strong>一个Servlet可以设置多个URL访问</strong>。<strong>Servlet不是线程安全</strong>，因此要谨慎使用类变量。 </p><h4 id="Servlet接口中有哪些方法及Servlet生命周期探秘"><a href="#Servlet接口中有哪些方法及Servlet生命周期探秘" class="headerlink" title="Servlet接口中有哪些方法及Servlet生命周期探秘"></a>Servlet接口中有哪些方法及Servlet生命周期探秘</h4><p>Servlet接口定义了5个方法，其中<strong>前三个方法与Servlet生命周期相关</strong>：</p><ul><li><code>void init(ServletConfig config) throws ServletException</code></li><li><code>void service(ServletRequest req, ServletResponse resp) throws ServletException, java.io.IOException</code></li><li><code>void destroy()</code></li><li><code>java.lang.String getServletInfo()</code></li><li><code>ServletConfig getServletConfig()</code></li></ul><p><strong>生命周期：</strong> <strong>Web容器加载Servlet并将其实例化后，Servlet生命周期开始</strong>，容器运行其<strong>init()方法</strong>进行Servlet的初始化；请求到达时调用Servlet的<strong>service()方法</strong>，service()方法会根据需要调用与请求对应的<strong>doGet或doPost</strong>等方法；当服务器关闭或项目被卸载时服务器会将Servlet实例销毁，此时会调用Servlet的<strong>destroy()方法</strong>。<strong>init方法和destroy方法只会执行一次，service方法客户端每次请求Servlet都会执行</strong>。Servlet中有时会用到一些需要初始化与销毁的资源，因此可以把初始化资源的代码放入init方法中，销毁资源的代码放入destroy方法中，这样就不需要每次处理客户端的请求都要初始化与销毁资源。</p><h4 id="Get和Post请求的区别"><a href="#Get和Post请求的区别" class="headerlink" title="Get和Post请求的区别"></a>Get和Post请求的区别</h4><ol><li><p>get请求用来从服务器上获得资源，而post是用来向服务器提交数据；</p></li><li><p>get将表单中数据按照name=value的形式，添加到action 所指向的URL 后面，并且两者使用”?”连接，而各个变量之间使用”&amp;”连接；post是将表单中的数据放在HTTP协议的请求头或消息体中，传递到action所指向URL；</p></li><li><p>get传输的数据要受到URL长度限制（最大长度是 2048 个字符）；而post可以传输大量的数据，上传文件通常要使用post方式；</p></li><li><p>使用get时参数会显示在地址栏上，如果这些数据不是敏感数据，那么可以使用get；对于敏感数据还是应用使用post；</p></li><li><p>get使用MIME类型application/x-www-form-urlencoded的URL编码（也叫百分号编码）文本的格式传递参数，保证被传送的参数由遵循规范的文本组成，例如一个空格的编码是”%20”。</p></li></ol><p>补充：GET方式提交表单的典型应用是搜索引擎。GET方式就是被设计为查询用的。</p><blockquote><p>另外一种答案:</p><p>​    GET和POST是什么？HTTP协议中的两种发送请求的方法。</p><p>​    HTTP是什么？HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。</p><p>​    HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。 </p><pre><code>GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。  </code></pre><p>GET和POST还有一个重大区别，简单的说：</p><p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p><p>长的说：</p><p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p><p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p><p>也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。</p><p>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑！跳入需谨慎。为什么？</p><ol><li><p>GET与POST都有自己的语义，不能随便混用。</p></li><li><p>据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</p></li><li><p>并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</p></li></ol></blockquote><h4 id="什么情况下调用doGet-和doPost"><a href="#什么情况下调用doGet-和doPost" class="headerlink" title="什么情况下调用doGet()和doPost()"></a>什么情况下调用doGet()和doPost()</h4><p> Form标签里的method的属性为get时调用doGet()，为post时调用doPost()。 </p><h4 id="转发-Forward-和重定向-Redirect-的区别"><a href="#转发-Forward-和重定向-Redirect-的区别" class="headerlink" title="转发(Forward)和重定向(Redirect)的区别"></a>转发(Forward)和重定向(Redirect)的区别</h4><p><strong>转发是服务器行为，重定向是客户端行为。</strong></p><p><strong>转发（Forward）</strong> 通过RequestDispatcher对象的forward（HttpServletRequest request,HttpServletResponse response）方法实现的。RequestDispatcher可以通过HttpServletRequest 的getRequestDispatcher()方法获得。例如下面的代码就是跳转到login_success.jsp页面。</p><p><code>request.getRequestDispatcher(&quot;login_success.jsp&quot;).forward(request, response);</code></p><p> <strong>重定向（Redirect）</strong> 是利用服务器返回的状态码来实现的。客户端浏览器请求服务器的时候，服务器会返回一个状态码。服务器通过 <code>HttpServletResponse</code> 的 <code>setStatus(int status)</code> 方法设置状态码。如果服务器返回301或者302，则浏览器会到新的网址重新请求该资源。 </p><ol><li><strong>从地址栏显示来说</strong></li></ol><p>forward是服务器请求资源,服务器直接访问目标地址的URL,把那个URL的响应内容读取过来,然后把这些内容再发给浏览器.浏览器根本不知道服务器发送的内容从哪里来的,所以它的地址栏还是原来的地址. redirect是服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址.所以地址栏显示的是新的URL.</p><ol start="2"><li><strong>从数据共享来说</strong></li></ol><p>forward:转发页面和转发到的页面可以共享request里面的数据. redirect:不能共享数据.</p><ol start="3"><li><strong>从运用地方来说</strong></li></ol><p>forward:一般用于用户登陆的时候,根据角色转发到相应的模块. redirect:一般用于用户注销登陆时返回主页面和跳转到其它的网站等</p><ol><li>从效率来说</li></ol><p>forward:高. redirect:低.</p><h4 id="自动刷新-Refresh"><a href="#自动刷新-Refresh" class="headerlink" title="自动刷新(Refresh)"></a>自动刷新(Refresh)</h4><p> 自动刷新不仅可以实现一段时间之后自动跳转到另一个页面，还可以实现一段时间之后自动刷新本页面。Servlet中通过HttpServletResponse对象设置Header属性实现自动刷新例如： </p><p><code>Response.setHeader(&quot;Refresh&quot;,&quot;5;URL=http://localhost:8080/servlet/example.htm&quot;);</code></p><p> 其中5为时间，单位为秒。URL指定就是要跳转的页面（如果设置自己的路径，就会实现每过5秒自动刷新本页面一次） </p><h4 id="Servlet与线程安全"><a href="#Servlet与线程安全" class="headerlink" title="Servlet与线程安全"></a>Servlet与线程安全</h4><p> <strong>Servlet不是线程安全的，多线程并发的读写会导致数据不同步的问题。</strong> 解决的办法是尽量不要定义name属性，而是要把name变量分别定义在doGet()和doPost()方法内。虽然使用synchronized(name){}语句块可以解决问题，但是会造成线程的等待，不是很科学的办法。 注意：多线程的并发的读写Servlet类属性会导致数据不同步。但是如果只是并发地读取属性而不写入，则不存在数据不同步的问题。因此Servlet里的只读属性最好定义为final类型的。 </p><h4 id="JSP和Servlet是什么关系"><a href="#JSP和Servlet是什么关系" class="headerlink" title="JSP和Servlet是什么关系"></a>JSP和Servlet是什么关系</h4><p>其实这个问题在上面已经阐述过了，Servlet是一个特殊的Java程序，它运行于服务器的JVM中，能够依靠服务器的支持向浏览器提供显示内容。JSP本质上是Servlet的一种简易形式，JSP会被服务器处理成一个类似于Servlet的Java程序，可以简化页面内容的生成。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。有人说，Servlet就是在Java中写HTML，而JSP就是在HTML中写Java代码，当然这个说法是很片面且不够准确的。JSP侧重于视图，Servlet更侧重于控制逻辑，在MVC架构模式中，JSP适合充当视图（view）而Servlet适合充当控制器（controller）。</p><h4 id="JSP工作原理"><a href="#JSP工作原理" class="headerlink" title="JSP工作原理"></a>JSP工作原理</h4><p>JSP是一种Servlet，但是与HttpServlet的工作方式不太一样。HttpServlet是先由源代码编译为class文件后部署到服务器下，为先编译后部署。而JSP则是先部署后编译。JSP会在客户端第一次请求JSP文件时被编译为HttpJspPage类（接口Servlet的一个子类）。该类会被服务器临时存放在服务器工作目录里面。下面通过实例给大家介绍。 工程JspLoginDemo下有一个名为login.jsp的Jsp文件，把工程第一次部署到服务器上后访问这个Jsp文件，我们发现这个目录下多了下图这两个东东。 .class文件便是JSP对应的Servlet。编译完毕后再运行class文件来响应客户端请求。以后客户端访问login.jsp的时候，Tomcat将不再重新编译JSP文件，而是直接调用class文件来响应客户端请求。 <a href="https://camo.githubusercontent.com/5b077d70058831d1e226f188c245f262684fc434/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d362f312e706e67" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/5b077d70058831d1e226f188c245f262684fc434/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d362f312e706e67" alt="JSP工作原理"></a> 由于JSP只会在客户端第一次请求的时候被编译 ，因此第一次请求JSP时会感觉比较慢，之后就会感觉快很多。如果把服务器保存的class文件删除，服务器也会重新编译JSP。</p><p>开发Web程序时经常需要修改JSP。Tomcat能够自动检测到JSP程序的改动。如果检测到JSP源代码发生了改动。Tomcat会在下次客户端请求JSP时重新编译JSP，而不需要重启Tomcat。这种自动检测功能是默认开启的，检测改动会消耗少量的时间，在部署Web应用的时候可以在web.xml中将它关掉。</p><h4 id="JSP有哪些内置对象-作用分别是什么"><a href="#JSP有哪些内置对象-作用分别是什么" class="headerlink" title="JSP有哪些内置对象,作用分别是什么"></a>JSP有哪些内置对象,作用分别是什么</h4><p>JSP有9个内置对象：</p><ul><li>request：封装客户端的请求，其中包含来自GET或POST请求的参数；</li><li>response：封装服务器对客户端的响应；</li><li>pageContext：通过该对象可以获取其他对象；</li><li>session：封装用户会话的对象；</li><li>application：封装服务器运行环境的对象；</li><li>out：输出服务器响应的输出流对象；</li><li>config：Web应用的配置对象；</li><li>page：JSP页面本身（相当于Java程序中的this）；</li><li>exception：封装页面抛出异常的对象。</li></ul><h4 id="request-getAttribute-和-request-getParameter-有何区别"><a href="#request-getAttribute-和-request-getParameter-有何区别" class="headerlink" title="request.getAttribute()和 request.getParameter()有何区别"></a>request.getAttribute()和 request.getParameter()有何区别</h4><p><strong>从获取方向来看：</strong></p><p><code>getParameter()</code>是获取 POST/GET 传递的参数值；</p><p><code>getAttribute()</code>是获取对象容器中的数据值；</p><p><strong>从用途来看：</strong></p><p><code>getParameter()</code>用于客户端重定向时，即点击了链接或提交按扭时传值用，即用于在用表单或url重定向传值时接收数据用。</p><p><code>getAttribute()</code> 用于服务器端重定向时，即在 sevlet 中使用了 forward 函数,或 struts 中使用了 mapping.findForward。 getAttribute 只能收到程序用 setAttribute 传过来的值。</p><p>另外，可以用 <code>setAttribute()</code>,<code>getAttribute()</code> 发送接收对象.而 <code>getParameter()</code> 显然只能传字符串。 <code>setAttribute()</code> 是应用服务器把这个对象放在该页面所对应的一块内存中去，当你的页面服务器重定向到另一个页面时，应用服务器会把这块内存拷贝另一个页面所对应的内存中。这样<code>getAttribute()</code>就能取得你所设下的值，当然这种方法可以传对象。session也一样，只是对象在内存中的生命周期不一样而已。<code>getParameter()</code>只是应用服务器在分析你送上来的 request页面的文本时，取得你设在表单或 url 重定向时的值。</p><p><strong>总结：</strong></p><p><code>getParameter()</code>返回的是String,用于读取提交的表单中的值;（获取之后会根据实际需要转换为自己需要的相应类型，比如整型，日期类型啊等等）</p><p><code>getAttribute()</code>返回的是Object，需进行转换,可用<code>setAttribute()</code>设置成任意对象，使用很灵活，可随时用</p><h4 id="include指令include的行为的区别"><a href="#include指令include的行为的区别" class="headerlink" title="include指令include的行为的区别"></a>include指令include的行为的区别</h4><p><strong>include指令：</strong> JSP可以通过include指令来包含其他文件。被包含的文件可以是JSP文件、HTML文件或文本文件。包含的文件就好像是该JSP文件的一部分，会被同时编译执行。 语法格式如下： &lt;%@ include file=”文件相对 url 地址” %&gt;</p><p><strong>include动作：</strong> ``动作元素用来包含静态和动态的文件。该动作把指定文件插入正在生成的页面。语法格式如下： &lt;jsp:include page=”相对 URL 地址” flush=”true” /&gt;</p><h4 id="JSP的九大内置对象-七大动作-三大指令"><a href="#JSP的九大内置对象-七大动作-三大指令" class="headerlink" title="JSP的九大内置对象,七大动作,三大指令"></a>JSP的九大内置对象,七大动作,三大指令</h4><p><strong>out输出流对象</strong><br>　　隐藏对象out是javax.servlet.jsp.JspWriter类的实例服务器向客户输出的字符内容可以通过out对象输出。获取方法： PrintWriter out = response.getWriter();out对象常用的方法如下： </p><ol><li>void clear() 　　清除缓冲区的内容</li><li>void clearBuffer() 　　清除缓冲区的当前内容 </li><li>void flush() 　　将缓冲内容flush到客户端浏览器 </li><li>int getBufferSize() 　　返回缓冲大小，单位KB </li><li>int getRemaining() 　　返回缓冲剩余大小，单位KB </li><li>isAutoFlush() 　　返回缓冲区满时,是自动清空还是抛出异常 </li><li>void close() 　　 关闭输出流</li></ol><p><strong>request请求对象</strong><br>　　隐藏对象request是javax.servlet.ServletRequest类的实例，代表客户端的请求。request包含客户端的信息以及请求的信息，如请求那个文件，附带的地址参数等。每次客户端的请求都会产生一个request实例。request对象的常用方法如下： </p><ol><li>object getAttribute(String name) 　　返回指定属性的属性值 </li><li>Enumeration getAttributeNames() 　　 返回所有可用属性名的枚举</li><li>String getCharacterEncoding() 　　返回字符编码方式</li><li>int getContentLength() 　　返回请求体的长度(以字节数)</li><li>String getContentType() 　　得到请求体的MIME类型</li><li>ServletInputStream getInputStream()　　 得到请求体中一行的二进制流</li><li>String getParameter(String name) 　　返回name指定参数的参数值</li><li>Enumeration getParameterNames()　　 返回可用参数名的枚举 </li><li>String[] getparameterValues(String name) 　　 返回包含参数name的所有值的数组</li><li>String getProtocol() 　　返回请求用的协议类型及版本号 </li><li>String getScheme() 　　返回请求用的计划名,如:http https及ftp等 </li><li>int getServerPort() 　　返回服务器接受此请求所用的端口号</li><li>String getServerName() 　　 返回接受请求的服务器主机名</li><li>BufferedReader getReader() 　　 返回解码过了的请求体</li><li>String getRemoteAddr() 　　 返回发送此请求的客户端IP地址</li><li>String getRemoteHost() 　　返回发送此请求的客户端主机名</li><li>void setAttribute(String key Object obj) 　　设置属性的属性值</li><li>String getRealPath(String path) 　　返回一虚拟路径的真实路径</li><li>void setCharacterEncoding(“gb2312”) 　　设置接受参数的字符集</li></ol><p><strong>response响应对象</strong><br>　　隐藏对象response是javax.servlet.ServletResponse类的实例，代表客户端的响应。服务器端的任何输出都通过response对象发送到客户端浏览器。每次服务器端都会响应一个response实例。response对象的常用方法如下： </p><ol><li>String getCharacterEncoding() 　　 返回响应用的是何种字符编码</li><li>ServletOutputStream getOutputStream() 　　返回响应的一个二进制输出流</li><li>PrintWriter getWriter() 　　返回可以向客户端输出字符的一个对象</li><li>void setContentLength(int len) 　　设置响应头长度</li><li>void setContentType(String type) 　　设置响应的MIME类型</li><li>sendRedirect(java.lang.String location) 　　重新定向客户端的请求</li><li>void setCharacterEncoding(“gb2312”) 　　设置响应头的字符集</li></ol><p><strong>config配置对象</strong><br>　　隐藏对象config是javax.servlet.ServletConfig类的实例，ServletConfig封装了配置在web.xml中初始化JSP的参数。JSP中通过config获取这些参数。每个JSP文件中共有一个config对象。config对象的常用方法如表： </p><ol><li>String getInitParameter(String name)　　返回配置在web.xml中初始化参数</li><li>Enumeration getInitParameterNames() 　　返回所有的初始化参数名称</li><li>ServletContext getServletContext()　　返回ServletContext对象</li><li>String getServletName　　返回Servlet对象</li></ol><p><strong>session会话对象</strong><br>　　隐藏对象session是javax.servlet.http.HttpSession类的实例。session与cookie是记录客户访问信息的两种机制，session是用于服务器端保存用户信息，cookie用于在客户端保存用户信息。Servlet中通过request.getSession()来获取session对象，而JSP中可以直接使用。如果JSP中配置了&lt;%@page session=”false”%&gt;,则隐藏对象session不可用。每个用户对应一个session对象。session对象的常用方法如下: </p><ol><li>long getCreationTime() 　　返回Session创建时间</li><li>public String getId() 　　返回Session创建时JSP引擎为它设的唯一ID号</li><li>long getLastAccessedTime() 　　返回此Session里客户端最近一次请求时间</li><li>int getMaxInactiveInterval()　　 返回两次请求间隔多长时间此Session被取消(ms)</li><li>String[] getValueNames() 　　返回一个包含此Session中所有可用属性的数组</li><li>void invalidate() 　取消Session,使Session不可用</li><li>boolean isNew() 　　返回服务器创建的一个Session,客户端是否已经加入</li><li>void removeValue(String name) 　　删除Session中指定的属性</li><li>void setAttribute(String key,Object obj) 　　设置Session的属性</li><li>Object getAttribute(String name)　　 返回session中属性名为name的对象</li></ol><p><strong>application应用程序对象</strong><br>　　隐藏对象application是javax.servlet.ServletContext类的对象。application封装JSP所在Web应用程序的信息，例如web.xml中配置的全局的初始化信息。Servlet中application对象需要通过ServletConfig.getServletContext()来获取。整个Web应用程序对应一个application对象。application对象常用的方法如下： </p><ol><li>Object getAttribute(String name)　　返回application中属性为name的对象</li><li>Enumeration getAttributeNames() 　　返回application中的所有属性名</li><li>void setAttribute(String name,Object value)　　设置application属性</li><li>void removeAttribute(String name) 　　移除application属性</li><li>String getInitParameter(String name)　　返回全局初始话函数</li><li>Enumeration getInitParameterNames(）　　返回所有的全局初始话参数</li><li>String getMimeType(String filename)　　返回文件的文档类型，例如getMimeType(“abc.html”)将返回“text.html”</li><li>String getRealPath(String relativePath）　　返回Web应用程序内相对网址对应的绝对路径</li></ol><p><strong>page页面对象</strong><br>　　隐藏对象page是javax.servlet.jsp.HttpJspPage类的实例。page对象代表当前JSP页面，是当前JSP编译后的Servlet类的对象。page想当于Java类中的关键字this</p><p><strong>pageContext页面上下文对象</strong><br>　　隐藏对象pageContext为javax.servlet.jsp.PageContext类的实例。pageContext对象代表当前JSP页面编译后的内容。通过pageContext能够获取到JSP中的资源。pageContext常用方法如下： </p><ol><li>JspWriter getOut() 　　返回out对象</li><li>HttpSession getSession() 　　 返回Session对象(session)</li><li>Object getPage() 　　返回page对象</li><li>ServletRequest getRequest() 　　 返回request对象</li><li>ServletResponse getResponse() 　　 返回response对象</li><li>void setAttribute(String name,Object attribute) 　　　设置属性及属性值 ，在page范围内有效 </li><li>void setAttribute(String name,Object obj,int scope)　　 在指定范围内设置属性及属性值 ，int1=page,2=request,3=session,4=application</li><li>public Object getAttribute(String name) 　　取属性的值</li><li>Object getAttribute(String name,int scope) 　　在指定范围内取属性的值 </li><li>public Object findAttribute(String name) 　　寻找一属性,返回起属性值或NULL</li><li>void removeAttribute(String name) 　　删除某属性</li><li>void removeAttribute(String name,int scope) 　　 在指定范围删除某属性</li><li>int getAttributeScope(String name)　　 返回某属性的作用范围</li><li>Enumeration getAttributeNamesInScope(int scope) 　　返回指定范围内可用的属性名枚举</li><li>void release() 　　释放pageContext所占用的资源</li><li>void forward(String relativeUrlPath) 　　 使当前页面重导到另一页面</li><li>void include(String relativeUrlPath) 　　 在当前位置包含另一文件</li></ol><p><strong>Eexception异常对象</strong><br>　　隐藏对象exception为java.lang.Exception类的对象。exception封装了JSP中抛出的异常信息。要使用exception隐藏对象，需要设置&lt;%@page isErrorPage”true”%&gt;。隐藏对象exception通常被用来处理错误页面， 　　</p><p><strong><em>JSP之三大指令</em></strong><br><strong>page指令</strong></p><blockquote><p><strong>实例：</strong><code>&lt;%@ page language=”java” import=”java.util.*” pageEncoding=”UTF-8”%&gt;</code> </p></blockquote><p><strong>import</strong>:等同与import语句 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page import=”java.util.*” %&gt; </span><br><span class="line">&lt;%@ page import=”java.util., java.net.” %&gt;</span><br></pre></td></tr></table></figure><p>在一个JSP页面中可以给出多个page指令，而且import是可以重复出现的 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page import=”java.util.*” %&gt; </span><br><span class="line">&lt;%@ page import=”java.next.*” %&gt;</span><br></pre></td></tr></table></figure><p><strong>pageEncoding</strong>：指定当前页面的编码 </p><ul><li>如果pageEncoding没有指定，那么默认为contentType的值</li><li>如果pageEncoding和contentType都没有指定，那么默认值为iso-8859-1</li></ul><p><strong>contentType</strong>：等同与调用<code>response.setContentType(“text/html;charset=xxx”);</code> </p><ul><li>如果没有指定contentType属性，那么默认为pageEncoding的值</li><li>如果contentType和pageEncoding都没有指定，那么默认值为iso-8859-1</li></ul><p><strong>errorPage</strong>：如果当前页面出现异常，那么跳转到errorPage指定的jsp页面。 </p><blockquote><p>例如：<code>&lt;%@ page errorPage=”b.jsp” %&gt;</code></p></blockquote><p><strong>isErrorPage</strong>：上面示例中指定b.jsp为错误页面，但在b.jsp中不能使用内置对象exception，保有b.jsp中使用&lt;%@page isErrorPage=”true”%&gt;时，才能在b.jsp中使用错误页面。<br><strong>autoFlush</strong>：当autoFlush为true时，表示out流缓冲区满时会自动刷新。默认为true<br><strong>buffer</strong>：指定out流的缓冲区大小，默认为8KB<br><strong>isELIgnored</strong>：当前JSP页面是否忽略EL表达式，默认为false，表示不忽略，即支持EL表达式</p><p><strong>page指令不常用的属性：</strong><br><strong>language</strong>：当前JSP编译后的语言！默认为java，当前也只能选择java<br><strong>info</strong>：当前JSP的说明信息<br><strong>isThreadSafe</strong>：当前JSP是否执行只能单线程访问，默认为false，表示支持并发访问<br><strong>session</strong>：当前页面是否可以使用session，默认为false，表示支持session的使用。<br><strong>extends</strong>：指定JSP编译的servlet的父类！ </p><p><strong><em>include指令</em></strong><br>JSP可以通过include指令来包含其他文件。被包含的文件可以是JSP文件、HTML文件或文本文件。包含的文件就好像是该JSP文件的一部分，会被同时编译执行。<br>Include指令的语法格式如下：<br><code>&lt;%@ include file=”文件相对 url 地址” %&gt;</code></p><p><strong>taglib指令</strong><br>taglib指令是用来在当前jsp页面中导入第三方的标签库<br><code>&lt;%@ taglib uri=”http://java.sun.com/jsp/jstl/core” % prefix=”c” &gt;</code><br><strong>prefix</strong>：指定标签前缀，这个东西可以随意起名<br><strong>uri</strong>：指定第三方标签库的uri（唯一标识）<br>当然，需要先把第三方标签库所需jar包放到类路径中。</p><p><strong><em>JSP之七大动作</em></strong><br><strong>jsp:include</strong>：在页面被请求的时候引入一个文件。<br><strong>jsp:useBean</strong>：寻找或者实例化一个 JavaBean。<br><strong>jsp:setProperty</strong>：设置 JavaBean 的属性。<br><strong>jsp:getProperty</strong>：输出某个 JavaBean 的属性。<br><strong>jsp:forward</strong>：把请求转到一个新的页面。<br><strong>jsp:plugin</strong>：根据浏览器类型为 Java 插件生成 OBJECT 或 EMBED 标记 </p><h4 id="讲解JSP中的四种作用域"><a href="#讲解JSP中的四种作用域" class="headerlink" title="讲解JSP中的四种作用域"></a>讲解JSP中的四种作用域</h4><p>JSP中的四种作用域包括page、request、session和application，具体来说：</p><ul><li><strong>page</strong>代表与一个页面相关的对+象和属性。</li><li><strong>request</strong>代表与Web客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个Web组件；需要在页面显示的临时数据可以置于此作用域。</li><li><strong>session</strong>代表与某个用户与服务器建立的一次会话相关的对象和属性。跟某个用户相关的数据应该放在用户自己的session中。</li><li><strong>application</strong>代表与整个Web应用程序相关的对象和属性，它实质上是跨越整个Web应用程序，包括多个页面、请求和会话的一个全局作用域。</li></ul><h4 id="如何实现JSP或Servlet的单线程模式"><a href="#如何实现JSP或Servlet的单线程模式" class="headerlink" title="如何实现JSP或Servlet的单线程模式"></a>如何实现JSP或Servlet的单线程模式</h4><p>对于JSP页面，可以通过page指令进行设置。 <code>&lt;%@page isThreadSafe=&quot;false&quot;%&gt;</code></p><p>对于Servlet，可以让自定义的Servlet实现SingleThreadModel标识接口。</p><blockquote><p>说明：如果将JSP或Servlet设置成单线程工作模式，会导致每个请求创建一个Servlet实例，这种实践将导致严重的性能问题（服务器的内存压力很大，还会导致频繁的垃圾回收），所以通常情况下并不会这么做。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 面试题 </tag>
+            
+            <tag> Servlet </tag>
             
         </tags>
       
@@ -273,9 +393,9 @@
       
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> Java </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> eclipse </tag>
             
