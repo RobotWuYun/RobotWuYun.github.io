@@ -103,9 +103,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
+            <tag> java </tag>
             
-            <tag> Java </tag>
+            <tag> 学习笔记 </tag>
             
             <tag> SpringBoot </tag>
             
@@ -132,9 +132,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> Linux </tag>
             
         </tags>
       
@@ -159,9 +159,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> SpringMVC </tag>
             
@@ -244,11 +244,11 @@
       
         <tags>
             
+            <tag> java </tag>
+            
             <tag> 学习笔记 </tag>
             
             <tag> SpringBoot </tag>
-            
-            <tag> java </tag>
             
         </tags>
       
@@ -273,9 +273,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 线程 </tag>
             
@@ -362,9 +362,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> Junit </tag>
             
@@ -391,9 +391,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> Log4j </tag>
             
@@ -420,9 +420,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 注解 </tag>
             
@@ -509,38 +509,9 @@
             
             <tag> 笔记 </tag>
             
-            <tag> Tomcat </tag>
-            
             <tag> IDEA </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>学习笔记_java高级_反射机制</title>
-      <link href="/2019/08/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_java%E9%AB%98%E7%BA%A7_%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/"/>
-      <url>/2019/08/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_java%E9%AB%98%E7%BA%A7_%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/</url>
-      
-        <content type="html"><![CDATA[<center>Javaの笔记<br>刷到高级啦!<br>反射机制</center><a id="more"></a><h3 id="获取类对象"><a href="#获取类对象" class="headerlink" title="获取类对象"></a>获取类对象</h3><p><strong>类对象的概念:</strong>所有的类,都存在一个<strong>类对象</strong> ,这个类对象用于提供类本身的信息,比如有几种构造方法,有多少属性,有哪些普通方法.</p><h4 id="什么是类对象"><a href="#什么是类对象" class="headerlink" title="什么是类对象"></a>什么是类对象</h4><p>同一个类的不同对象,区别在于，各自有不同的属性值。</p><p>类之间的区别在于有<strong>不同的方法，不同的属性</strong>。</p><p><strong>类对象</strong>，就是用于描述这种类，都有什么属性，什么方法的 .</p><h4 id="获取类对象-1"><a href="#获取类对象-1" class="headerlink" title="获取类对象"></a>获取类对象</h4><p><strong>获取类对象有三种方式:</strong> </p><ol><li><p>Class.forName</p></li><li><p>类名.class</p></li><li><p>new Hero().getClass()</p><p>在一个JVM中，一种类，只会有一个类对象存在。所以以上三种方式取出来的类对象，都是一样的。</p></li></ol><blockquote><p> <strong>注：</strong> 准确的讲是一个ClassLoader下，一种类，只会有一个类对象存在。通常一个JVM下，只会有一个ClassLoader。</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class pClass1=Class.forName(className);</span><br><span class="line">Class pClass2=Hero.class;</span><br><span class="line">Class pClass3=<span class="keyword">new</span> Hero().getClass();</span><br></pre></td></tr></table></figure><h4 id="获取类对象时会导致属性被初始化"><a href="#获取类对象时会导致属性被初始化" class="headerlink" title="获取类对象时会导致属性被初始化"></a>获取类对象时会导致属性被初始化</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> String copyright;</span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">"初始化 copyright"</span>);</span><br><span class="line">    copyright = <span class="string">"版权由Riot Games公司所有"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>无论什么途径获取类对象，都会导致静态属性被初始化，而且只会执行一次。（除了直接使用 Class c = Hero.class 这种方式，这种方式不会导致静态属性被初始化）</p><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>与传统的通过new 来获取对象的方式不同<br>反射机制，会先拿到“类对象”,然后通过类对象获取“构造器对象”<br>再通过构造器对象创建一个对象</p><h4 id="创建一个对象"><a href="#创建一个对象" class="headerlink" title="创建一个对象"></a>创建一个对象</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflection;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> charactor.Hero;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestReflection</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//传统的使用new的方式创建对象</span></span><br><span class="line">        Hero h1 =<span class="keyword">new</span> Hero();</span><br><span class="line">        h1.name = <span class="string">"teemo"</span>;</span><br><span class="line">        System.out.println(h1);</span><br><span class="line">          </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//使用反射的方式创建对象</span></span><br><span class="line">            String className = <span class="string">"charactor.Hero"</span>;</span><br><span class="line">            <span class="comment">//类对象</span></span><br><span class="line">            Class pClass=Class.forName(className);</span><br><span class="line">            <span class="comment">//构造器</span></span><br><span class="line">            Constructor c= pClass.getConstructor();</span><br><span class="line">            <span class="comment">//通过构造器实例化</span></span><br><span class="line">            Hero h2= (Hero) c.newInstance();</span><br><span class="line">            h2.name=<span class="string">"gareen"</span>;</span><br><span class="line">            System.out.println(h2);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><p>通过反射机制修改对象的属性.</p><p><strong>public的类型可以直接访问,对于private修饰的成员,需要setAccessible(true)才能访问.</strong></p><h4 id="TestRelection"><a href="#TestRelection" class="headerlink" title="TestRelection"></a>TestRelection</h4><p>通过反射修改属性的值.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflection;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> charactor.Hero;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestReflection</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            Hero h =<span class="keyword">new</span> Hero();</span><br><span class="line">            <span class="comment">//使用传统方式修改name的值为garen</span></span><br><span class="line">            h.name = <span class="string">"garen"</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//获取类Hero的名字叫做name的字段</span></span><br><span class="line">                Field f1= h.getClass().getDeclaredField(<span class="string">"name"</span>);</span><br><span class="line">                <span class="comment">//修改这个字段的值</span></span><br><span class="line">                f1.set(h, <span class="string">"teemo"</span>);</span><br><span class="line">                <span class="comment">//打印被修改后的值</span></span><br><span class="line">                System.out.println(h.name);</span><br><span class="line">                 </span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="getField和getDeclaredField的区别"><a href="#getField和getDeclaredField的区别" class="headerlink" title="getField和getDeclaredField的区别"></a>getField和getDeclaredField的区别</h4><p>这两个方法都是用于获取字段<br>getField <strong>只能获取</strong>public的，包括<strong>从父类继承</strong>来的字段。<br>getDeclaredField 可以获取本类所有的字段，<strong>包括private</strong>的，但是<strong>不能获取继承</strong>来的字段。 (<strong>注</strong>： 这里只能获取到private的<strong>字段</strong>，但并不能访问该private字段的<strong>值</strong>,除非加上<strong>setAccessible(true)</strong>)</p><h4 id="反射机制调用方法"><a href="#反射机制调用方法" class="headerlink" title="反射机制调用方法"></a>反射机制调用方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflection;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> charactor.Hero;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestReflection</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Hero h = <span class="keyword">new</span> Hero();</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取这个名字叫做setName，参数类型是String的方法</span></span><br><span class="line">            Method m = h.getClass().getMethod(<span class="string">"setName"</span>, String.class);</span><br><span class="line">            <span class="comment">// 对h对象，调用这个方法</span></span><br><span class="line">            m.invoke(h, <span class="string">"盖伦"</span>);</span><br><span class="line">            <span class="comment">// 使用传统的方式，调用getName方法</span></span><br><span class="line">            System.out.println(h.getName());</span><br><span class="line"> </span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="反射机制的作用"><a href="#反射机制的作用" class="headerlink" title="反射机制的作用"></a>反射机制的作用</h4><p>需要在学习了Spring 的依赖注入，反转控制之后，才会对反射有更好的理解.</p><p><strong>简单而言就是:</strong>通过配置文件的方式,将原来需要通过修改代码,重新编译的事情,可以通过修改配置文件来实现.</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 学习笔记 </tag>
-            
-            <tag> java </tag>
-            
-            <tag> 反射机制 </tag>
+            <tag> Tomcat </tag>
             
         </tags>
       
@@ -565,11 +536,40 @@
       
         <tags>
             
+            <tag> java </tag>
+            
             <tag> 学习笔记 </tag>
+            
+            <tag> JDBC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>学习笔记_java高级_反射机制</title>
+      <link href="/2019/08/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_java%E9%AB%98%E7%BA%A7_%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/"/>
+      <url>/2019/08/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_java%E9%AB%98%E7%BA%A7_%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<center>Javaの笔记<br>刷到高级啦!<br>反射机制</center><a id="more"></a><h3 id="获取类对象"><a href="#获取类对象" class="headerlink" title="获取类对象"></a>获取类对象</h3><p><strong>类对象的概念:</strong>所有的类,都存在一个<strong>类对象</strong> ,这个类对象用于提供类本身的信息,比如有几种构造方法,有多少属性,有哪些普通方法.</p><h4 id="什么是类对象"><a href="#什么是类对象" class="headerlink" title="什么是类对象"></a>什么是类对象</h4><p>同一个类的不同对象,区别在于，各自有不同的属性值。</p><p>类之间的区别在于有<strong>不同的方法，不同的属性</strong>。</p><p><strong>类对象</strong>，就是用于描述这种类，都有什么属性，什么方法的 .</p><h4 id="获取类对象-1"><a href="#获取类对象-1" class="headerlink" title="获取类对象"></a>获取类对象</h4><p><strong>获取类对象有三种方式:</strong> </p><ol><li><p>Class.forName</p></li><li><p>类名.class</p></li><li><p>new Hero().getClass()</p><p>在一个JVM中，一种类，只会有一个类对象存在。所以以上三种方式取出来的类对象，都是一样的。</p></li></ol><blockquote><p> <strong>注：</strong> 准确的讲是一个ClassLoader下，一种类，只会有一个类对象存在。通常一个JVM下，只会有一个ClassLoader。</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class pClass1=Class.forName(className);</span><br><span class="line">Class pClass2=Hero.class;</span><br><span class="line">Class pClass3=<span class="keyword">new</span> Hero().getClass();</span><br></pre></td></tr></table></figure><h4 id="获取类对象时会导致属性被初始化"><a href="#获取类对象时会导致属性被初始化" class="headerlink" title="获取类对象时会导致属性被初始化"></a>获取类对象时会导致属性被初始化</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> String copyright;</span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">"初始化 copyright"</span>);</span><br><span class="line">    copyright = <span class="string">"版权由Riot Games公司所有"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>无论什么途径获取类对象，都会导致静态属性被初始化，而且只会执行一次。（除了直接使用 Class c = Hero.class 这种方式，这种方式不会导致静态属性被初始化）</p><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>与传统的通过new 来获取对象的方式不同<br>反射机制，会先拿到“类对象”,然后通过类对象获取“构造器对象”<br>再通过构造器对象创建一个对象</p><h4 id="创建一个对象"><a href="#创建一个对象" class="headerlink" title="创建一个对象"></a>创建一个对象</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflection;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> charactor.Hero;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestReflection</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//传统的使用new的方式创建对象</span></span><br><span class="line">        Hero h1 =<span class="keyword">new</span> Hero();</span><br><span class="line">        h1.name = <span class="string">"teemo"</span>;</span><br><span class="line">        System.out.println(h1);</span><br><span class="line">          </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//使用反射的方式创建对象</span></span><br><span class="line">            String className = <span class="string">"charactor.Hero"</span>;</span><br><span class="line">            <span class="comment">//类对象</span></span><br><span class="line">            Class pClass=Class.forName(className);</span><br><span class="line">            <span class="comment">//构造器</span></span><br><span class="line">            Constructor c= pClass.getConstructor();</span><br><span class="line">            <span class="comment">//通过构造器实例化</span></span><br><span class="line">            Hero h2= (Hero) c.newInstance();</span><br><span class="line">            h2.name=<span class="string">"gareen"</span>;</span><br><span class="line">            System.out.println(h2);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><p>通过反射机制修改对象的属性.</p><p><strong>public的类型可以直接访问,对于private修饰的成员,需要setAccessible(true)才能访问.</strong></p><h4 id="TestRelection"><a href="#TestRelection" class="headerlink" title="TestRelection"></a>TestRelection</h4><p>通过反射修改属性的值.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflection;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> charactor.Hero;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestReflection</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            Hero h =<span class="keyword">new</span> Hero();</span><br><span class="line">            <span class="comment">//使用传统方式修改name的值为garen</span></span><br><span class="line">            h.name = <span class="string">"garen"</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//获取类Hero的名字叫做name的字段</span></span><br><span class="line">                Field f1= h.getClass().getDeclaredField(<span class="string">"name"</span>);</span><br><span class="line">                <span class="comment">//修改这个字段的值</span></span><br><span class="line">                f1.set(h, <span class="string">"teemo"</span>);</span><br><span class="line">                <span class="comment">//打印被修改后的值</span></span><br><span class="line">                System.out.println(h.name);</span><br><span class="line">                 </span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="getField和getDeclaredField的区别"><a href="#getField和getDeclaredField的区别" class="headerlink" title="getField和getDeclaredField的区别"></a>getField和getDeclaredField的区别</h4><p>这两个方法都是用于获取字段<br>getField <strong>只能获取</strong>public的，包括<strong>从父类继承</strong>来的字段。<br>getDeclaredField 可以获取本类所有的字段，<strong>包括private</strong>的，但是<strong>不能获取继承</strong>来的字段。 (<strong>注</strong>： 这里只能获取到private的<strong>字段</strong>，但并不能访问该private字段的<strong>值</strong>,除非加上<strong>setAccessible(true)</strong>)</p><h4 id="反射机制调用方法"><a href="#反射机制调用方法" class="headerlink" title="反射机制调用方法"></a>反射机制调用方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflection;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> charactor.Hero;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestReflection</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Hero h = <span class="keyword">new</span> Hero();</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取这个名字叫做setName，参数类型是String的方法</span></span><br><span class="line">            Method m = h.getClass().getMethod(<span class="string">"setName"</span>, String.class);</span><br><span class="line">            <span class="comment">// 对h对象，调用这个方法</span></span><br><span class="line">            m.invoke(h, <span class="string">"盖伦"</span>);</span><br><span class="line">            <span class="comment">// 使用传统的方式，调用getName方法</span></span><br><span class="line">            System.out.println(h.getName());</span><br><span class="line"> </span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="反射机制的作用"><a href="#反射机制的作用" class="headerlink" title="反射机制的作用"></a>反射机制的作用</h4><p>需要在学习了Spring 的依赖注入，反转控制之后，才会对反射有更好的理解.</p><p><strong>简单而言就是:</strong>通过配置文件的方式,将原来需要通过修改代码,重新编译的事情,可以通过修改配置文件来实现.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> java </tag>
             
-            <tag> JDBC </tag>
+            <tag> 学习笔记 </tag>
+            
+            <tag> 反射机制 </tag>
             
         </tags>
       
@@ -594,9 +594,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 泛型 </tag>
             
@@ -652,9 +652,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 集合框架 </tag>
             
@@ -681,9 +681,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> IO </tag>
             
@@ -710,9 +710,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 异常处理 </tag>
             
@@ -739,9 +739,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 日期 </tag>
             
@@ -768,9 +768,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 数字与字符串 </tag>
             
@@ -797,9 +797,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 继承与接口 </tag>
             
@@ -826,9 +826,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 类和对象 </tag>
             
@@ -855,9 +855,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 数组 </tag>
             
@@ -884,9 +884,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 控制流程 </tag>
             
@@ -913,9 +913,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 操作符 </tag>
             
@@ -942,9 +942,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 变量 </tag>
             
@@ -971,9 +971,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> 面向对象 </tag>
             
@@ -1000,9 +1000,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 学习笔记 </tag>
             
             <tag> HelloWorld </tag>
             
