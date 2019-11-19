@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>hexo上传后点击标签报错</title>
+      <link href="/2019/11/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/"/>
+      <url>/2019/11/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/</url>
+      
+        <content type="html"><![CDATA[<center>错误信息：SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</center><a id="more"></a><h3 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息:"></a>错误信息:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</span><br></pre></td></tr></table></figure><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><ol><li>右键工程,打开工程属性对话框,到<strong>Deloyment Assembly</strong>页面,点击Add:</li></ol><p><img src="https://i.loli.net/2019/08/19/t6xosw3CuTrymVZ.png" alt="20131224084203859.png"></p><ol start="2"><li><p>选择<strong>java Build Path Entries</strong><br><img src="https://i.loli.net/2019/08/19/dtJMGwgiFCIae1y.png" alt="20131224084158734.png"></p></li><li><p>把成序用的Library加入进来<br><img src="https://i.loli.net/2019/08/19/zsEkR6JIC7oBZeL.png" alt="20131224084217687.png"></p></li></ol><p>4.重新运行Server</p><p><strong>鸣谢:</strong>CSDN_hunhun1122</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 异常处理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux学习笔记_命令</title>
       <link href="/2019/11/14/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Linux_%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/11/14/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_Linux_%E5%91%BD%E4%BB%A4/</url>
@@ -103,9 +130,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> Java </tag>
             
             <tag> SpringBoot </tag>
             
@@ -132,9 +159,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 学习笔记 </tag>
             
         </tags>
       
@@ -159,9 +186,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> SpringMVC </tag>
             
@@ -244,11 +271,11 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
             
             <tag> SpringBoot </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -273,9 +300,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 线程 </tag>
             
@@ -362,9 +389,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> Junit </tag>
             
@@ -391,9 +418,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> Log4j </tag>
             
@@ -420,9 +447,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 注解 </tag>
             
@@ -536,9 +563,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> JDBC </tag>
             
@@ -565,9 +592,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 反射机制 </tag>
             
@@ -594,9 +621,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 泛型 </tag>
             
@@ -608,26 +635,24 @@
     
     <entry>
       <title>Maven+spring 报错：Error configuring application listener of class org.springframework.web.cont</title>
-      <link href="/2019/08/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/"/>
-      <url>/2019/08/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_java%E7%AF%87_1/</url>
+      <link href="/2019/08/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_Hexo_1/"/>
+      <url>/2019/08/19/%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97_Hexo_1/</url>
       
-        <content type="html"><![CDATA[<center>错误信息：SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</center><a id="more"></a><h3 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息:"></a>错误信息:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SEVERE: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener</span><br></pre></td></tr></table></figure><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><ol><li>右键工程,打开工程属性对话框,到<strong>Deloyment Assembly</strong>页面,点击Add:</li></ol><p><img src="https://i.loli.net/2019/08/19/t6xosw3CuTrymVZ.png" alt="20131224084203859.png"></p><ol start="2"><li><p>选择<strong>java Build Path Entries</strong><br><img src="https://i.loli.net/2019/08/19/dtJMGwgiFCIae1y.png" alt="20131224084158734.png"></p></li><li><p>把成序用的Library加入进来<br><img src="https://i.loli.net/2019/08/19/zsEkR6JIC7oBZeL.png" alt="20131224084217687.png"></p></li></ol><p>4.重新运行Server</p><p><strong>鸣谢:</strong>CSDN_hunhun1122</p>]]></content>
+        <content type="html"><![CDATA[<center>    gulp压缩报错<br>上传后部分标签,分类点击报错</center><a id="more"></a><h3 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因:"></a>报错原因:</h3><p>没找到具体原因,但是根据我的修改内容,原因大概是,<strong>hexo博客框架在识别标签</strong>,分类时,不区分大小写,当你的博客既有大写,如:<code>Java</code>,又有小写,如<code>java</code>,这是Hexo就傻了,他根据标签同时建立了Java和java两个标签,识别的内容却是一样的,这样就导致,它将全部的内容放在一个标签下,另一个标签虽然数量和这个标签一致但是,由于没有内容,当你点击时它找不到,所以就报错了,及404.</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>很简单,把所有文章的tags,categories:两项统一一下</p>]]></content>
       
       
       <categories>
           
-          <category> 异常处理 </category>
+          <category> hexo食用指南 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
+            <tag> hexo </tag>
             
-            <tag> 笔记 </tag>
-            
-            <tag> eclipse </tag>
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -652,9 +677,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 集合框架 </tag>
             
@@ -681,9 +706,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> IO </tag>
             
@@ -710,9 +735,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 异常处理 </tag>
             
@@ -739,9 +764,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 日期 </tag>
             
@@ -768,9 +793,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 数字与字符串 </tag>
             
@@ -797,9 +822,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 继承与接口 </tag>
             
@@ -826,9 +851,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 类和对象 </tag>
             
@@ -855,9 +880,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 数组 </tag>
             
@@ -884,9 +909,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 控制流程 </tag>
             
@@ -913,9 +938,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 操作符 </tag>
             
@@ -942,9 +967,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 变量 </tag>
             
@@ -971,9 +996,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> 面向对象 </tag>
             
@@ -1000,9 +1025,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> java </tag>
             
             <tag> HelloWorld </tag>
             
